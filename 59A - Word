@@ -1,0 +1,44 @@
+// IN THE NAME OF ALLAH ^_^
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+
+using namespace std;
+
+int main ()
+{
+    string s;
+    cin >> s;
+    int capital=0, small=0;
+    for (int i=0; i<s.length(); i++){
+        if (s[i]>='A' && s[i]<='Z'){
+            capital++;
+        }
+        else {
+            small++;
+        }
+    }
+    if (capital>small){
+        for (int j=0; j<s.length(); j++){
+            if (s[j]>='a' && s[j]<='z'){
+                s[j]-=32;
+            }
+        }
+    }
+    else if (small>capital){
+        for (int j=0; j<s.length(); j++){
+            if (s[j]>='A' && s[j]<='Z'){
+                s[j]+=32;
+            }
+        }
+    }
+    else {
+        for (int j=0; j<s.length(); j++){
+            if (s[j]>='A' && s[j]<='Z'){
+                s[j]+=32;
+            }
+        }
+    }
+    cout << s;
+}
