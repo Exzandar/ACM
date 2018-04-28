@@ -1,0 +1,36 @@
+// IN THE NAME OF ALLAH ^_^
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+
+using namespace std;
+
+int main ()
+{
+    string s, h;
+    cin >> s;
+    int c=0;
+    h=s;
+    for (int i=1; i<s.length(); i++){
+        if (s[i]>='A' && s[i]<='Z'){
+            s[i]+=32;
+        }
+        else {
+            c++;
+            break;
+        }
+    }
+    if (c>0){
+        cout << h;
+    }
+
+    else if (s[0]>='a' && s[0]<='z'){
+        s[0]-=32;
+        cout << s;
+    }
+    else {
+        s[0]+=32;
+        cout << s;
+    }
+}
