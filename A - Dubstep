@@ -1,0 +1,39 @@
+// IN THE NAME OF ALAAH ^_^
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int main ()
+{
+    string s;
+    cin >> s;
+    int l=s.length();
+    for (int i=0; i<l; i++){
+        if (s.find("WUB")==i){
+            s[i]='*';
+            s.erase(i+1, 2);
+        }
+    }
+    l=s.length();
+    for (int i=0; i<l; i++){
+        if (s[i]=='*' && s[i+1]>='A' && s[i+1]<='Z'){
+            s[i]=' ';
+        }
+    }
+    l=s.length();
+    for (int i=0; i<l; i++){
+        if (s[i]=='*'){
+            s.erase(i, 1);
+            i--;
+        }
+    }
+    if (s[0]==' '){
+        s.erase(0, 1);
+    }
+    cout << s;
+}
+
